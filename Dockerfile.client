@@ -1,0 +1,12 @@
+FROM golang:1.22.1-alpine3.19 as build
+RUN apk add --no-cache make
+WORKDIR /app
+COPY . .
+RUN make build-client
+
+
+FROM alpine:3.19
+WORKDIR /app
+COPY --from=build /app/bin/client /app/client
+EXPOSE 8080
+ENTRYPOINT ["/app/client"]

@@ -1,0 +1,15 @@
+version: '3'
+services:
+  word-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    network_mode: host
+
+  word-client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    network_mode: host
+    depends_on:
+      - word-server
