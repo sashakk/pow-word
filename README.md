@@ -4,12 +4,13 @@ This is a TCP server implemented in Go that handles requests for generating and 
 
 ### Protocol description
 
-App use custom protocol for swift and efficient interactions between a client and a server and and focused on transferring as little data as possible
+App use custom protocol for swift and efficient interactions between a client and a server and focused on transferring as little data as possible
 
 Structures of requests/responses:
 1. **Request to ask a puzzle from a server:**
 
 ```[1]```
+
 2. **Response for a request from point 1:**
 
 ```
